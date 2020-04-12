@@ -8,7 +8,7 @@ RPlus.settings = RPlus.settings || (function () {
 			if (url.path(details.url) == "/Data/Upload.ashx") {
 				var headers = {
 					"User-Agent": "Roblox/WinInet",
-					"Host": "data.roblox.com",
+					"Host": "data.sitetest2.robloxlabs.com",
 					"Accept": "*/*",
 					"Accept-Encoding": "deflate, gzip",
 					"Cookie": "",
@@ -29,7 +29,7 @@ RPlus.settings = RPlus.settings || (function () {
 				}
 				return { requestHeaders: newhead };
 			}
-		}, { urls: ["*://data.roblox.com/Data/*"] }, ["requestHeaders", "blocking", "extraHeaders"]);
+		}, { urls: ["*://data.sitetest2.robloxlabs.com/Data/*"] }, ["requestHeaders", "blocking", "extraHeaders"]);
 	}
 
 	return {
@@ -64,7 +64,7 @@ RPlus.settings = RPlus.settings || (function () {
 					}
 				}
 				var upload = "<roblox" + encodeURIComponent(JSON.stringify(ns)) + "</roblox>";
-				$.post("https://data.roblox.com/Data/Upload.ashx?assetid=311113112&type=Model&length=" + upload.length, upload).done(function (r) {
+				$.post("https://data.sitetest2.robloxlabs.com/Data/Upload.ashx?assetid=311113112&type=Model&length=" + upload.length, upload).done(function (r) {
 					resolve(ns);
 				}).fail(function () {
 					reject([{

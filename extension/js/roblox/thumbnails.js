@@ -53,7 +53,7 @@ Roblox.thumbnails = (function () {
 				});
 			});
 
-			$.post("https://thumbnails.roblox.com/v1/batch", requestData).done((r) => {
+			$.post("https://thumbnails.sitetest2.robloxlabs.com/v1/batch", requestData).done((r) => {
 				let result = [];
 
 				r.data.forEach((thumbnail) => {
@@ -115,7 +115,7 @@ Roblox.thumbnails = (function () {
 		});
 	};
 
-	/* https://thumbnails.roblox.com/docs/json/v1
+	/* https://thumbnails.sitetest2.robloxlabs.com/docs/json/v1
 	"Roblox.Thumbnails.Apis.Models.ThumbnailBatchRequest": {
 		"type": "object",
 		"properties": {

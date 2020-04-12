@@ -260,7 +260,7 @@ class About extends React.Component {
 						<div class="rbx-divider"></div>
 						<h4>Website Access</h4>
 						<p class="text-description">
-							<span>Any extension that has permission to roblox.com has just as much access to the website as you do! Roblox+ is no exception to that. Any extension that has access to roblox.com has access to anything you can do, including but not limited to:</span>
+							<span>Any extension that has permission to sitetest2.robloxlabs.com has just as much access to the website as you do! Roblox+ is no exception to that. Any extension that has access to sitetest2.robloxlabs.com has access to anything you can do, including but not limited to:</span>
 							<br />
 							<ul>
 								<li>Your Robux</li>
@@ -284,7 +284,7 @@ class About extends React.Component {
 							<span>This extension heavily utilizes your Roblox account data to improve your Roblox experience. That's the entire point of the extension. If you do not trust me as a developer to use this data securely and with good judgement to not expose you to any harm please do not use this extension.</span>
 							<br />
 							<br />
-							<span>Roblox+ needs access to the roblox.com website to be able to modify the website. Without access to the website there is no way to add these features to website.</span>
+							<span>Roblox+ needs access to the sitetest2.robloxlabs.com website to be able to modify the website. Without access to the website there is no way to add these features to website.</span>
 							<br />
 							<span>Roblox+ has access to two other domains:</span>
 							<br />
@@ -356,7 +356,7 @@ class About extends React.Component {
 									</ul>
 								</li>
 								<li>
-									<span>*://*.roblox.com/*</span>
+									<span>*://*.sitetest2.robloxlabs.com/*</span>
 								</li>
 								<li>
 									<span>*://*.rbxcdn.com/*</span>
@@ -372,7 +372,7 @@ class About extends React.Component {
 						<div class="rbx-divider"></div>
 						<h4>Web Request Interception</h4>
 						<p class="text-description">
-							<span>Some requests to roblox.com are intercepted!</span>
+							<span>Some requests to sitetest2.robloxlabs.com are intercepted!</span>
 							<br />
 							<span>Yup. This extension uses webRequest and webRequestBlocking permissions to intercept and modify some requests that go to Roblox. For example: To load the authentication token for game launch additional headers are needed that are not typically accessible via XMLHttpRequest. webRequest is needed for this to add the additional request parameters necessary to launch you into game as... you!</span>
 							<br />

@@ -6,7 +6,7 @@ var Roblox = Roblox || {};
 Roblox.inventory = (function () {
 	function loadUserCollectibleAssets(userId, cursor) {
 		return new Promise(function (resolve, reject) {
-			$.get("https://inventory.roblox.com/v1/users/" + userId + "/assets/collectibles", { cursor: cursor || "", sortOrder: "Asc", limit: 100 }).done(function (r) {
+			$.get("https://inventory.sitetest2.robloxlabs.com/v1/users/" + userId + "/assets/collectibles", { cursor: cursor || "", sortOrder: "Asc", limit: 100 }).done(function (r) {
 				if (r.nextPageCursor) {
 					loadUserCollectibleAssets(userId, r.nextPageCursor).then(function (extraData) {
 						resolve(r.data.concat(extraData));
@@ -67,7 +67,7 @@ Roblox.inventory = (function () {
 				return;
 			}
 
-			$.post("https://assetgame.roblox.com/asset/delete-from-inventory", { assetId: assetId }).done(function () {
+			$.post("https://assetgame.sitetest2.robloxlabs.com/asset/delete-from-inventory", { assetId: assetId }).done(function () {
 				resolve();
 			}).fail(function () {
 				reject([]);
@@ -86,7 +86,7 @@ Roblox.inventory = (function () {
 				return;
 			}
 
-			$.get("https://inventory.roblox.com/v2/assets/" + assetId + "/owners", { cursor: cursor || "", sortOrder: sortOrder || "Asc", limit: 100 }).done(function (data) {
+			$.get("https://inventory.sitetest2.robloxlabs.com/v2/assets/" + assetId + "/owners", { cursor: cursor || "", sortOrder: sortOrder || "Asc", limit: 100 }).done(function (data) {
 				var dcb = -1;
 				var fcb = function () {
 					if (++dcb === data.data.length) {
@@ -138,7 +138,7 @@ Roblox.inventory = (function () {
 				return;
 			}
 
-			$.get("https://badges.roblox.com/v1/users/" + userId + "/badges", {
+			$.get("https://badges.sitetest2.robloxlabs.com/v1/users/" + userId + "/badges", {
 				limit: 100,
 				sortOrder: "Desc",
 				cursor: cursor || ""

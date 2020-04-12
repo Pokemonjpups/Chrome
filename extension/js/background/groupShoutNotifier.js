@@ -9,7 +9,7 @@ RPlus.notifiers.groupShout = (function () {
 		requireAuthenticatedUser: true
 	}, function (user, cache, rerun) {
 		return new Promise(function (resolve, reject) {
-			$.get("https://www.roblox.com/Feeds/GetUserFeed").done(function (r) {
+			$.get("https://www.sitetest2.robloxlabs.com/Feeds/GetUserFeed").done(function (r) {
 				var whitelist = storage.get("groupShoutNotifierList") || {};
 				var groups = {};
 				var cacheTimestamp = cache.timestamp || 0;

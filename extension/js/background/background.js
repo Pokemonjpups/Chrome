@@ -1,6 +1,6 @@
 // background.js [3/30/2016]
 /*
-	For any questions message WebGL3D https://www.roblox.com/messages/compose?recipientId=48103520
+	For any questions message WebGL3D https://www.sitetest2.robloxlabs.com/messages/compose?recipientId=48103520
 	My messages will always be open for all, if you can't PM me check your settings.
 */
 foreach({
@@ -57,7 +57,7 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
 			}
 		});
 	});
-}, { urls: ["*://*.roblox.com/comments/post"] }, ["requestBody"]);
+}, { urls: ["*://*.sitetest2.robloxlabs.com/comments/post"] }, ["requestBody"]);
 
 setInterval(function () {
 	foreach(commentTimer, function (n, o) {
@@ -86,8 +86,8 @@ Roblox.users.getAuthenticatedUser().then(function (user) {
 		chrome.webRequest.onBeforeRequest.addListener(function (details) {
 			var match = details.url.match(/\/asset\/(.*)/i) || ["", ""];
 			console.log("redirect", match[1]);
-			return { redirectUrl: "https://assetgame.roblox.com/asset/" + match[1] };
-		}, { urls: ["*://www.roblox.com/asset/*"] }, ["blocking"]);
+			return { redirectUrl: "https://assetgame.sitetest2.robloxlabs.com/asset/" + match[1] };
+		}, { urls: ["*://www.sitetest2.robloxlabs.com/asset/*"] }, ["blocking"]);
 
 		// Sound is dumb sometimes: net::ERR_CONTENT_DECODING_FAILED
 		chrome.webRequest.onBeforeRequest.addListener(function (details) {
@@ -121,11 +121,11 @@ Roblox.users.getAuthenticatedUser().then(function (user) {
 					}
 				});
 
-				if (redirectLocation && redirectLocation.toLowerCase().endsWith("www.roblox.com/catalog/")) {
+				if (redirectLocation && redirectLocation.toLowerCase().endsWith("www.sitetest2.robloxlabs.com/catalog/")) {
 					return { cancel: true };
 				}
 			}
-		}, { urls: ["*://www.roblox.com/catalog/*/*"] }, ["blocking", "responseHeaders"]);
+		}, { urls: ["*://www.sitetest2.robloxlabs.com/catalog/*/*"] }, ["blocking", "responseHeaders"]);
 	}
 }).catch(function (e) {
 	// oh well..
@@ -157,7 +157,7 @@ storage.get("siteTheme", function (value) {
 
 			$.ajax({
 				type: "PATCH",
-				url: "https://accountsettings.roblox.com/v1/themes/User/" + authenticatedUser.id,
+				url: "https://accountsettings.sitetest2.robloxlabs.com/v1/themes/User/" + authenticatedUser.id,
 				data: {
 					"themeType": "Dark"
 				}
@@ -178,7 +178,7 @@ storage.get("siteTheme", function (value) {
 		makenote(startnote);
 	} else if (startnote.on) {
 		var listener; listener = function () { chrome.webRequest.onCompleted.removeListener(listener); makenote(startnote); };
-		chrome.webRequest.onCompleted.addListener(listener, { types: ["main_frame"], urls: ["*://*.roblox.com/*"] });
+		chrome.webRequest.onCompleted.addListener(listener, { types: ["main_frame"], urls: ["*://*.sitetest2.robloxlabs.com/*"] });
 	}
 })(storage.get("startupNotification"), function (startnote) {
 	Roblox.users.getAuthenticatedUser().then(function (user) {
@@ -204,12 +204,12 @@ storage.get("siteTheme", function (value) {
 				clickable: true,
 				metadata: {
 					speak: username ? "Hello, " + username : "",
-					url: ul.updateLog || "https://www.roblox.com/users/48103520/profile?rbxp=48103520",
+					url: ul.updateLog || "https://www.sitetest2.robloxlabs.com/users/48103520/profile?rbxp=48103520",
 					expiration: 15 * 1000
 				}
 			}).buttonClick(function () {
 				note.close();
-				window.open("https://www.roblox.com/groups/2518656/ROBLOX-Fan-Group?rbxp=48103520");
+				window.open("https://www.sitetest2.robloxlabs.com/groups/2518656/ROBLOX-Fan-Group?rbxp=48103520");
 			});
 		}).catch(function (e) {
 			console.warn("no startup notification", e);

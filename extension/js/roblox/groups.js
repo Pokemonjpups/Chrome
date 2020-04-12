@@ -34,7 +34,7 @@ Roblox.groups = (function () {
 			} else {
 				name = name.replace(/\W+/g, "-").replace(/^-+/, "").replace(/-+$/, "") || "redirect";
 			}
-			return "https://www.roblox.com/groups/" + id + "/" + name;
+			return "https://www.sitetest2.robloxlabs.com/groups/" + id + "/" + name;
 		},
 
 		getUserGroups: $.promise.cache(function(resolve, reject, userId) {
@@ -46,7 +46,7 @@ Roblox.groups = (function () {
 				return;
 			}
 
-			$.get("https://groups.roblox.com/v2/users/" + userId + "/groups/roles").done(function (r) {
+			$.get("https://groups.sitetest2.robloxlabs.com/v2/users/" + userId + "/groups/roles").done(function (r) {
 				var groups = r.data.map(function(userGroup) {
 					return {
 						group: {

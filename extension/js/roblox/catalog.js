@@ -71,7 +71,7 @@ Roblox.catalog = (function () {
 			} else {
 				assetName = assetName.replace(/\W+/g, "-").replace(/^-+/, "").replace(/-+$/, "") || "redirect";
 			}
-			return "https://www.roblox.com/catalog/" + assetId + "/" + assetName;
+			return "https://www.sitetest2.robloxlabs.com/catalog/" + assetId + "/" + assetName;
 		},
 
 		getBundleUrl: function(bundleId, bundleName) {
@@ -80,7 +80,7 @@ Roblox.catalog = (function () {
 			} else {
 				bundleName = bundleName.replace(/\W+/g, "-").replace(/^-+/, "").replace(/-+$/, "") || "redirect";
 			}
-			return "https://www.roblox.com/bundles/" + bundleId + "/" + bundleName;
+			return "https://www.sitetest2.robloxlabs.com/bundles/" + bundleId + "/" + bundleName;
 		},
 
 		calculateAveragePriceAfterSale: function (currentAveragePrice, priceToSellFor) {
@@ -97,7 +97,7 @@ Roblox.catalog = (function () {
 		},
 
 		getAssetBundles: $.promise.cache(function (resolve, reject, assetId) {
-			$.get("https://catalog.roblox.com/v1/assets/" + assetId + "/bundles").done(function(r) {
+			$.get("https://catalog.sitetest2.robloxlabs.com/v1/assets/" + assetId + "/bundles").done(function(r) {
 				resolve(r.data.map(function(bundle) {
 					var outfitId = NaN;
 					bundle.items.forEach(function(item) {
@@ -130,7 +130,7 @@ Roblox.catalog = (function () {
 				return;
 			}
 			
-			$.get("https://api.roblox.com/marketplace/productinfo", { assetId: assetId }).done(function (r) {
+			$.get("https://api.sitetest2.robloxlabs.com/marketplace/productinfo", { assetId: assetId }).done(function (r) {
 				var remaining = Number(r.Remaining) || 0;
 				var sales = Number(r.Sales) || 0;
 				resolve({
@@ -174,7 +174,7 @@ Roblox.catalog = (function () {
 				return;
 			}
 
-			$.get("https://api.roblox.com/marketplace/productdetails", { productId: productId }).done(function (r) {
+			$.get("https://api.sitetest2.robloxlabs.com/marketplace/productdetails", { productId: productId }).done(function (r) {
 				var remaining = Number(r.Remaining) || 0;
 				resolve({
 					id: r.ProductId,
@@ -213,7 +213,7 @@ Roblox.catalog = (function () {
 				return;
 			}
 
-			$.get("https://api.roblox.com/marketplace/game-pass-product-info", { gamePassId: gamePassId }).done(function (r) {
+			$.get("https://api.sitetest2.robloxlabs.com/marketplace/game-pass-product-info", { gamePassId: gamePassId }).done(function (r) {
 				resolve({
 					id: gamePassId,
 					name: r.Name,

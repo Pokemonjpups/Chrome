@@ -3,9 +3,9 @@
 */
 (window.Roblox || (Roblox = {})).games = (function () {
 	var launchFrame = $("<iframe>").hide();
-	var baseLaunchUrl = "https://assetgame.roblox.com/game/PlaceLauncher.ashx?";
-	var authTicketUrl = "https://auth.roblox.com/v1/authentication-ticket?" + $.param({ verification: ext.id, _: +new Date });
-	var refererOverrideValue = "https://www.roblox.com/users/48103520/profile?roblox=plus";
+	var baseLaunchUrl = "https://assetgame.sitetest2.robloxlabs.com/game/PlaceLauncher.ashx?";
+	var authTicketUrl = "https://auth.sitetest2.robloxlabs.com/v1/authentication-ticket?" + $.param({ verification: ext.id, _: +new Date });
+	var refererOverrideValue = "https://www.sitetest2.robloxlabs.com/users/48103520/profile?roblox=plus";
 
 	var getAuthTicket = function () {
 		return new Promise(function (resolve, reject) {
@@ -21,7 +21,7 @@
 	};
 
 	var getServers = $.promise.cache(function (resolve, reject, placeId, cursor) {
-		$.get("https://www.roblox.com/games/getgameinstancesjson", { placeId: placeId, startindex: (cursor - 1) * 10 }).done(function (r) {
+		$.get("https://www.sitetest2.robloxlabs.com/games/getgameinstancesjson", { placeId: placeId, startindex: (cursor - 1) * 10 }).done(function (r) {
 			resolve({
 				nextPageCursor: r.TotalCollectionSize > cursor * 10 && r.Collection.length >= 10 ? cursor + 1 : null,
 				previousPageCursor: cursor > 1 ? cursor - 1 : null,
@@ -39,7 +39,7 @@
 	var getVipServers = $.promise.cache(function (resolve, reject, universeId, pageNumber) {
 		pageNumber = pageNumber || 1;
 
-		$.get("https://www.roblox.com/private-server/instance-list-json", { universeId: universeId, page: pageNumber }).done(function (r) {
+		$.get("https://www.sitetest2.robloxlabs.com/private-server/instance-list-json", { universeId: universeId, page: pageNumber }).done(function (r) {
 			var vipServers = [];
 
 			(r.Instances || []).forEach(function (server) {
@@ -133,7 +133,7 @@
 			} else {
 				placeName = placeName.replace(/\W+/g, "-").replace(/^-+/, "").replace(/-+$/, "") || "redirect";
 			}
-			return "https://www.roblox.com/games/" + placeId + "/" + placeName;
+			return "https://www.sitetest2.robloxlabs.com/games/" + placeId + "/" + placeName;
 		},
 
 		launch: $.promise.cache(function (resolve, reject, launchArguments) {
@@ -199,7 +199,7 @@
 		}),
 
 		getGroupGames: $.promise.cache(function(resolve, reject, groupId) {
-			$.get(`https://games.roblox.com/v2/groups/${groupId}/games`, {
+			$.get(`https://games.sitetest2.robloxlabs.com/v2/groups/${groupId}/games`, {
 				limit: 100,
 				sortOrder: "Asc",
 				accessFilter: "Public"

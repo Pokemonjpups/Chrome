@@ -15,7 +15,7 @@ Roblox.economy = (function () {
 					return;
 				}
 
-				$.get("https://economy.roblox.com/v1/users/" + authenticatedUserId + "/currency").done(function(r) {
+				$.get("https://economy.sitetest2.robloxlabs.com/v1/users/" + authenticatedUserId + "/currency").done(function(r) {
 					resolve({
 						robux: r.robux
 					});
@@ -52,7 +52,7 @@ Roblox.economy = (function () {
 					return;
 				}
 
-				$.post("https://economy.roblox.com/v1/purchases/products/" + product.id, {
+				$.post("https://economy.sitetest2.robloxlabs.com/v1/purchases/products/" + product.id, {
 					expectedCurrency: 1,
 					expectedPrice: expectedPrice,
 					expectedSellerId: product.creator.agentId

@@ -22,9 +22,9 @@ Roblox.users = (function () {
 
 		getProfileUrl: function (info) {
 			if (typeof (info) == "string") {
-				return "https://www.roblox.com/users/profile?username=" + encodeURIComponent(info);
+				return "https://www.sitetest2.robloxlabs.com/users/profile?username=" + encodeURIComponent(info);
 			}
-			return "https://www.roblox.com/users/" + (Number(info) || 0) + "/profile";
+			return "https://www.sitetest2.robloxlabs.com/users/" + (Number(info) || 0) + "/profile";
 		},
 
 		getCurrentUserId: $.promise.cache(function (resolve, reject) {
@@ -34,7 +34,7 @@ Roblox.users = (function () {
 		}),
 
 		getAuthenticatedUser: $.promise.cache(function (resolve, reject) {
-			$.get("https://users.roblox.com/v1/users/authenticated").done((r) => {
+			$.get("https://users.sitetest2.robloxlabs.com/v1/users/authenticated").done((r) => {
 				resolve({
 					id: r.id,
 					username: r.name
@@ -87,7 +87,7 @@ Roblox.users = (function () {
 				return;
 			}
 
-			$.post("https://users.roblox.com/v1/usernames/users", {
+			$.post("https://users.sitetest2.robloxlabs.com/v1/usernames/users", {
 				usernames: [username]
 			}).done(function (r) {
 				if (r.data.length > 0) {
@@ -133,7 +133,7 @@ Roblox.users = (function () {
 				return;
 			}
 
-			$.post("https://users.roblox.com/v1/usernames/users", {
+			$.post("https://users.sitetest2.robloxlabs.com/v1/usernames/users", {
 				usernames: remainingUsernames
 			}).done(function (r) {
 				var usernameMap = {};
@@ -178,7 +178,7 @@ Roblox.users = (function () {
 				return;
 			}
 
-			$.post("https://users.roblox.com/v1/users", {
+			$.post("https://users.sitetest2.robloxlabs.com/v1/users", {
 				userIds: remainingUserIds
 			}).done(function (r) {
 				r.data.forEach(function (user) {
@@ -227,7 +227,7 @@ Roblox.users = (function () {
 				1: 2
 			};
 
-			$.post("https://presence.roblox.com/v1/presence/users", { userIds: userIds }).done(function (presences) {
+			$.post("https://presence.sitetest2.robloxlabs.com/v1/presence/users", { userIds: userIds }).done(function (presences) {
 				presences.userPresences.forEach(function (report) {
 					presence[report.userId] = {
 						game: report.gameId ? {

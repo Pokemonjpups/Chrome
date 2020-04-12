@@ -179,7 +179,7 @@ RPlus.notifiers.catalog = (function () {
 						};
 
 						if (message.data.itemType === "Asset") {
-							notification.metadata.url = "https://www.roblox.com/catalog/" + message.data.id + "/Roblox-Plus";
+							notification.metadata.url = "https://www.sitetest2.robloxlabs.com/catalog/" + message.data.id + "/Roblox-Plus";
 
 							Roblox.thumbnails.getAssetThumbnailUrl(message.data.id, 150, 150).then(function(assetThumbnailUrl) {
 								notification.icon = assetThumbnailUrl;
@@ -189,7 +189,7 @@ RPlus.notifiers.catalog = (function () {
 								$.notification(notification);
 							});
 						} else if (message.data.itemType === "Bundle") {
-							notification.metadata.url = "https://www.roblox.com/bundles/" + message.data.id + "/Roblox-Plus";
+							notification.metadata.url = "https://www.sitetest2.robloxlabs.com/bundles/" + message.data.id + "/Roblox-Plus";
 
 							Roblox.thumbnails.getBundleThumbnailUrl(message.data.id, 150, 150).then(function(bundleThumbnailUrl) {
 								notification.icon = bundleThumbnailUrl;
@@ -227,7 +227,7 @@ RPlus.notifiers.catalog = (function () {
 						},
 						buttons: ["Buy for R$75"],
 						icon: assetThumbnailUrl,
-						url: "https://www.roblox.com/catalog/904518348/Noob-Assist-Smores-Snacker"
+						url: "https://www.sitetest2.robloxlabs.com/catalog/904518348/Noob-Assist-Smores-Snacker"
 					})
 				},
 				from: "/topics/catalog-notifier-premium"

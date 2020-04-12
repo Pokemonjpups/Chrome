@@ -52,7 +52,7 @@ class NotificationSettings extends SettingsTab {
 
 				audioButton.setAudioId(newAudioId);
 				$(this).blur();
-			}).attr("placeholder", "https://www.roblox.com/library/205318910/Sound");
+			}).attr("placeholder", "https://www.sitetest2.robloxlabs.com/library/205318910/Sound");
 
 			formGroup.append(audioInput);
 			formGroup.append(audioButton);
@@ -267,9 +267,9 @@ class NotificationSettings extends SettingsTab {
 							onToggle={this.setPillValue.bind(this, "itemNotifier")} />
 						<div class="rbx-divider"></div>
 						<span class="text-description">
-							- Notifications when a <a href="https://www.roblox.com/catalog/?Category=1&CreatorID=1&SortType=3&IncludeNotForSale" class="text-link">Roblox created item</a> comes out or gets updated.
+							- Notifications when a <a href="https://www.sitetest2.robloxlabs.com/catalog/?Category=1&CreatorID=1&SortType=3&IncludeNotForSale" class="text-link">Roblox created item</a> comes out or gets updated.
 							<br/>
-							- Notifications for <a href="https://www.roblox.com/catalog/?Category=13" class="text-link">community creations</a> from creators you follow.
+							- Notifications for <a href="https://www.sitetest2.robloxlabs.com/catalog/?Category=13" class="text-link">community creations</a> from creators you follow.
 						</span>
 						<a class="icon-Musical" onClick={this.promptChangeNotifierSound.bind(this, "item")}></a>
 					</div>
@@ -324,7 +324,7 @@ class NotificationSettings extends SettingsTab {
 						<span class="text-description">When turned on only groups on this list will be notified for.</span>
 						<a class={"icon-plus" + (this.state.pills.groupShoutWhitelistEnabled && this.state.pills.groupShoutNotifier ? "" : " hidden")} onClick={this.toggleAddWhitelistedGroup.bind(this)}></a>
 						<div class={"form-group form-has-feedback" + (this.state.groupError ? " form-has-error" : "") + (this.state.showAddGroup ? "" : " hidden")}>
-							<input class="form-control input-field" placeholder="https://www.roblox.com/groups/2518656/ROBLOX-Fan-Group" id="rplus-groupshout-notifier-input" onKeyUp={this.tryAddGroup.bind(this)} />
+							<input class="form-control input-field" placeholder="https://www.sitetest2.robloxlabs.com/groups/2518656/ROBLOX-Fan-Group" id="rplus-groupshout-notifier-input" onKeyUp={this.tryAddGroup.bind(this)} />
 							<span class="form-control-label">{this.state.groupError}</span>
 						</div>
 						<div class={this.state.pills.groupShoutWhitelistEnabled && this.state.pills.groupShoutNotifier ? "" : "hidden"}>

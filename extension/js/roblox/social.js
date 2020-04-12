@@ -6,7 +6,7 @@ var Roblox = Roblox || {};
 Roblox.social = (function () {
 	return {
 		getBlockedUsers: $.promise.cache(function (resolve, reject) {	
-			$.get("https://www.roblox.com/my/settings/json").done(function (r) {	
+			$.get("https://www.sitetest2.robloxlabs.com/my/settings/json").done(function (r) {	
 				var users = [];	
 				r.BlockedUsersModel.BlockedUsers.forEach(function (user) {	
 					users.push({	
@@ -46,7 +46,7 @@ Roblox.social = (function () {
 				return;
 			}
 
-			$.post("https://friends.roblox.com/v1/users/" + userId + "/follow").done(function () {
+			$.post("https://friends.sitetest2.robloxlabs.com/v1/users/" + userId + "/follow").done(function () {
 				resolve();
 			}).fail(function () {
 				reject([{
@@ -66,7 +66,7 @@ Roblox.social = (function () {
 				return;
 			}
 
-			$.post("https://friends.roblox.com/v1/users/" + userId + "/unfollow").done(function () {
+			$.post("https://friends.sitetest2.robloxlabs.com/v1/users/" + userId + "/unfollow").done(function () {
 				resolve();
 			}).fail(function () {
 				reject([{
@@ -86,7 +86,7 @@ Roblox.social = (function () {
 				return;
 			}
 
-			$.post("https://friends.roblox.com/v1/users/" + userId + "/unfriend").done(function () {
+			$.post("https://friends.sitetest2.robloxlabs.com/v1/users/" + userId + "/unfriend").done(function () {
 				resolve();
 			}).fail(function () {
 				reject([{
@@ -115,7 +115,7 @@ Roblox.social = (function () {
 				return;
 			}
 
-			$.get("https://api.roblox.com/user/following-exists", {
+			$.get("https://api.sitetest2.robloxlabs.com/user/following-exists", {
 				userId: followingUserId,
 				followerUserId: userId,
 			}).done(function(data) {
@@ -147,7 +147,7 @@ Roblox.social = (function () {
 				return;
 			}
 
-			$.get("https://friends.roblox.com/v1/users/" + userId + "/friends").done(function (r) {
+			$.get("https://friends.sitetest2.robloxlabs.com/v1/users/" + userId + "/friends").done(function (r) {
 				var users = [];
 				r.data.forEach(function (user) {
 					users.push({

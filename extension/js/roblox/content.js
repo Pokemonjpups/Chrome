@@ -13,7 +13,7 @@
 			}
 
 			$.ajax({
-				url: "https://assetdelivery.roblox.com/v1/assets/batch",
+				url: "https://assetdelivery.sitetest2.robloxlabs.com/v1/assets/batch",
 				type: "POST",
 				data: [
 					{

@@ -8,7 +8,7 @@ Roblox.trades = (function () {
 
 	return {
 		getTradeWindowUrl: function (userId, counterTradeId) {
-			return "https://www.roblox.com/Trade/TradeWindow.aspx?TradePartnerID=" + userId + (counterTradeId ? "&TradeSessionId=" + counterTradeId : "");
+			return "https://www.sitetest2.robloxlabs.com/Trade/TradeWindow.aspx?TradePartnerID=" + userId + (counterTradeId ? "&TradeSessionId=" + counterTradeId : "");
 		},
 
 		decline: $.promise.cache(function (resolve, reject, tradeId) {
@@ -20,7 +20,7 @@ Roblox.trades = (function () {
 				return;
 			}
 
-			$.post(`https://trades.roblox.com/v1/trades/${tradeId}/decline`).done(function() {
+			$.post(`https://trades.sitetest2.robloxlabs.com/v1/trades/${tradeId}/decline`).done(function() {
 				resolve();
 			}).fail(function (jxhr, errors) {
 				reject(errors);
@@ -48,7 +48,7 @@ Roblox.trades = (function () {
 					return;
 				}
 
-				$.get("https://trades.roblox.com/v1/trades/" + tradeId).done(function(r) {
+				$.get("https://trades.sitetest2.robloxlabs.com/v1/trades/" + tradeId).done(function(r) {
 					let trade = {
 						id: r.id,
 						status: r.status == "Open" ? (r.offers[0].user.id === authenticatedUser.id ? "Outbound" : "Inbound") : r.status,
@@ -115,7 +115,7 @@ Roblox.trades = (function () {
 				return;
 			}
 
-			$.get("https://trades.roblox.com/v1/trades/" + tradeType, {
+			$.get("https://trades.sitetest2.robloxlabs.com/v1/trades/" + tradeType, {
 				sortOrder: "Desc",
 				limit: 100,
 				cursor: cursor || ""
@@ -191,7 +191,7 @@ Roblox.trades = (function () {
 		}),
 
 		getTradeCount: $.promise.cache(function (resolve, reject, tradeType) {
-			$.get("https://trades.roblox.com/v1/trades/" + tradeType + "/count").done(function (r) {
+			$.get("https://trades.sitetest2.robloxlabs.com/v1/trades/" + tradeType + "/count").done(function (r) {
 				resolve(r.count);
 			}).fail(function () {
 				reject([{

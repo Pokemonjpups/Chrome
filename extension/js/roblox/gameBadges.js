@@ -52,7 +52,7 @@ Roblox.gameBadges = (function () {
 			};
 
 			for (let userId in userIdRequests) {
-				$.get(`https://badges.roblox.com/v1/users/${userId}/badges/awarded-dates`, {
+				$.get(`https://badges.sitetest2.robloxlabs.com/v1/users/${userId}/badges/awarded-dates`, {
 					badgeIds: userIdRequests[userId].join(",")
 				}).done(function(awardedDates) {
 					try {

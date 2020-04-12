@@ -26,7 +26,7 @@ RPlus.notifiers.trade = (function () {
 						buttons: trade.status === "Outbound" ? ["Cancel"] : [],
 						clickable: true,
 						metadata: {
-							url: "https://www.roblox.com/trades", // TODO: Add trade id if Roblox supports (or I add support for it)
+							url: "https://www.sitetest2.robloxlabs.com/trades", // TODO: Add trade id if Roblox supports (or I add support for it)
 							robloxSound: Number((storage.get("notifierSounds") || {})["trade" + (trade.status == "Rejected" ? "Declined" : trade.status)]) || 0,
 							speak: title
 						}

@@ -18,7 +18,7 @@ Roblox.navigation = (function () {
 					return;
 				}
 
-				$.get("https://api.roblox.com/incoming-items/counts").done(function (r) {
+				$.get("https://api.sitetest2.robloxlabs.com/incoming-items/counts").done(function (r) {
 					resolve({
 						unreadMessageCount: r.unreadMessageCount,
 						friendRequestCount: r.friendRequestsCount

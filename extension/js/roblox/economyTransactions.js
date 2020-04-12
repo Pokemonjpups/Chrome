@@ -211,10 +211,10 @@ Roblox.economyTransactions = Roblox.economyTransactions || (function() {
 			var url;
 			switch (seller.type) {
 				case "User":
-					url = `https://economy.roblox.com/v1/users/${seller.id}/transactions`;
+					url = `https://economy.sitetest2.robloxlabs.com/v1/users/${seller.id}/transactions`;
 					break;
 				case "Group":
-					url = `https://economy.roblox.com/v1/groups/${seller.id}/transactions`;
+					url = `https://economy.sitetest2.robloxlabs.com/v1/groups/${seller.id}/transactions`;
 					break;
 				default:
 					reject(`Unknown transaction seller type: ${seller.type}`)

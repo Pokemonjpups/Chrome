@@ -3,7 +3,7 @@ chrome.browserAction.onClicked.addListener(function () {
 	chrome.tabs.query({
 		active: true,
 		currentWindow: true,
-		url: ["*://www.roblox.com/*", "*://web.roblox.com/*"],
+		url: ["*://www.sitetest2.robloxlabs.com/*", "*://web.sitetest2.robloxlabs.com/*"],
 		status: "complete"
 	}, function (tabs) {
 		if (tabs.length === 1) {

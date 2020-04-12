@@ -3,7 +3,8 @@
 	"version": "2.0.0",
 	"scripts": {
 		"react": "./node_modules/.bin/babel extension/js/react --out-dir extension/js/output/react",
-		"scss": "./node_modules/.bin/node-sass extension/css -o extension/css/output"
+		"scss": "./node_modules/.bin/node-sass extension/css -o extension/css/output",
+		"build": "npm run react && npm run scss"
 	},
 	"devDependencies": {
 		"node-sass": "^4.0.0",

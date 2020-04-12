@@ -26,7 +26,7 @@
 				"/js/vendors/jquery-3.4.1.min.js",
 				"/js/jquery/styleAfterJquery.js"
 			],
-			"matches": [ "*://*.roblox.com/*" ],
+			"matches": [ "*://*.sitetest2.robloxlabs.com/*" ],
 			"all_frames": true,
 			"run_at": "document_start"
 		},
@@ -90,7 +90,7 @@
 				"/css/roblox/itemCards.css",
 				"/css/roblox/icons.css"
 			],
-			"matches": [ "*://*.roblox.com/*" ],
+			"matches": [ "*://*.sitetest2.robloxlabs.com/*" ],
 			"run_at": "document_start"
 		},
 
@@ -113,7 +113,7 @@
 
 				"/js/jquery/loadPages.js"
 			],
-			"matches": [ "*://www.roblox.com/*", "*://web.roblox.com/*" ],
+			"matches": [ "*://www.sitetest2.robloxlabs.com/*", "*://web.sitetest2.robloxlabs.com/*" ],
 			"run_at": "document_end"
 		},
 
@@ -130,7 +130,7 @@
 			"css": [
 				"/css/output/features/quick-info-widget.css"
 			],
-			"matches": [ "*://www.roblox.com/*", "*://web.roblox.com/*" ],
+			"matches": [ "*://www.sitetest2.robloxlabs.com/*", "*://web.sitetest2.robloxlabs.com/*" ],
 			"run_at": "document_end"
 		},
 
@@ -142,7 +142,7 @@
 				"/js/output/react/components/thumbnail-presence.js"
 			],
 			"matches": [
-				"*://*.roblox.com/*"
+				"*://*.sitetest2.robloxlabs.com/*"
 			],
 			"run_at": "document_start"
 		},
@@ -160,7 +160,7 @@
 				"/css/output/pages/settings.css"
 			],
 			"matches": [
-				"*://*.roblox.com/my/account*"
+				"*://*.sitetest2.robloxlabs.com/my/account*"
 			],
 			"run_at": "document_end"
 		},
@@ -173,7 +173,7 @@
 				"/css/output/pages/catalog.css"
 			],
 			"matches": [
-				"*://*.roblox.com/catalog/*"
+				"*://*.sitetest2.robloxlabs.com/catalog/*"
 			],
 			"run_at": "document_end"
 		},
@@ -183,7 +183,7 @@
 				"/css/output/pages/groups.css"
 			],
 			"matches": [
-				"*://*.roblox.com/groups/*/*"
+				"*://*.sitetest2.robloxlabs.com/groups/*/*"
 			],
 			"run_at": "document_end"
 		},
@@ -198,9 +198,9 @@
 				"/css/output/components/bucketed-sales-chart.css"
 			],
 			"matches": [
-				"*://*.roblox.com/catalog/configure*",
-				"*://*.roblox.com/library/configure*",
-				"*://*.roblox.com/game-pass/configure*"
+				"*://*.sitetest2.robloxlabs.com/catalog/configure*",
+				"*://*.sitetest2.robloxlabs.com/library/configure*",
+				"*://*.sitetest2.robloxlabs.com/game-pass/configure*"
 			],
 			"run_at": "document_end"
 		},
@@ -214,7 +214,7 @@
 				"/css/output/components/bucketed-sales-chart.css"
 			],
 			"matches": [
-				"*://*.roblox.com/groups/configure*"
+				"*://*.sitetest2.robloxlabs.com/groups/configure*"
 			],
 			"run_at": "document_end"
 		},
@@ -224,7 +224,7 @@
 				"/css/output/pages/game-details.css"
 			],
 			"matches": [
-				"*://*.roblox.com/games/*/*"
+				"*://*.sitetest2.robloxlabs.com/games/*/*"
 			],
 			"run_at": "document_end"
 		},
@@ -239,8 +239,8 @@
 				"/css/output/pages/item-details.css"
 			],
 			"matches": [
-				"*://*.roblox.com/catalog/*/*",
-				"*://*.roblox.com/library/*/*"
+				"*://*.sitetest2.robloxlabs.com/catalog/*/*",
+				"*://*.sitetest2.robloxlabs.com/library/*/*"
 			],
 			"run_at": "document_start"
 		}
@@ -254,7 +254,7 @@
 	},
 
 
-	"homepage_url": "https://www.roblox.com/my/account?tab=rplus",
+	"homepage_url": "https://www.sitetest2.robloxlabs.com/my/account?tab=rplus",
 	"permissions": [
 		"gcm",
 		"contextMenus",
@@ -262,7 +262,7 @@
 		"webRequestBlocking",
 		"tts",
 		"notifications",
-		"*://*.roblox.com/*",
+		"*://*.sitetest2.robloxlabs.com/*",
 		"*://*.rbxcdn.com/*",
 		"*://*.roblox.plus/*"
 	],
@@ -275,7 +275,7 @@
 		"jquery.min.map",
 		"/images/icons/icon_32x32.png",
 		"/images/notifier.png",
-		"*://*.roblox.com/*",
+		"*://*.sitetest2.robloxlabs.com/*",
 		"*://*.rbxcdn.com/*",
 		"*://*.roblox.plus/*"
 	],
